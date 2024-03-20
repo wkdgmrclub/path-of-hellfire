@@ -356,6 +356,18 @@ bool HardwareCursorSupported()
 #endif
 }
 #endif
+void ForceHellfire()
+{
+	sgOptions.StartUp.gameMode.SetValue(1);
+	sgOptions.Gameplay.tickRate.SetValue(20);
+	sgOptions.Gameplay.friendlyFire.SetValue(false);
+	sgOptions.Gameplay.autoRefillBelt.SetValue(false);
+	sgOptions.Gameplay.disableCripplingShrines.SetValue(false);
+	sgOptions.Gameplay.testBard.SetValue(false);
+	sgOptions.Gameplay.testBarbarian.SetValue(false);
+	sgOptions.Gameplay.theoQuest.SetValue(false);
+	sgOptions.Gameplay.cowQuest.SetValue(false);
+}
 
 void LoadOptions()
 {
@@ -569,7 +581,7 @@ StartUpOptions::StartUpOptions()
     : OptionCategoryBase("StartUp", N_("Start Up"), N_("Start Up Settings"))
     , gameMode("Game", OptionEntryFlags::NeedHellfireMpq | OptionEntryFlags::RecreateUI, N_("Game Mode"), N_("Play Diablo or Hellfire."), StartUpGameMode::Ask,
           {
-              { StartUpGameMode::Diablo, N_("Diablo") },
+              // { StartUpGameMode::Diablo, N_("Diablo") },
               // Ask is missing, cause we want to hide it from UI-Settings.
               { StartUpGameMode::Hellfire, N_("Hellfire") },
           })

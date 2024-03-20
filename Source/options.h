@@ -834,4 +834,9 @@ void SaveOptions();
  */
 void LoadOptions();
 
+/**
+ * @brief Forced Hellfire game mode and other forced game options
+ */
+void ForceHellfire();
+
 } // namespace devilution
