@@ -2568,6 +2568,8 @@ int DiabloMain(int argc, char **argv)
 #endif
 	SaveOptions();
 
+	ForceHellfire();
+
 	DiabloSplash();
 	mainmenu_loop();
 	DiabloDeinit();
