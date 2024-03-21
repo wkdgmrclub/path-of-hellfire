@@ -360,13 +360,15 @@ void ForceHellfire()
 {
 	sgOptions.StartUp.gameMode.SetValue(StartUpGameMode::Hellfire);
 	sgOptions.Gameplay.tickRate.SetValue(20);
+	sgOptions.Gameplay.runInTown.SetValue(true);
+	sgOptions.Gameplay.autoPickupInTown.SetValue(false);
 	sgOptions.Gameplay.friendlyFire.SetValue(false);
 	sgOptions.Gameplay.autoRefillBelt.SetValue(false);
 	sgOptions.Gameplay.disableCripplingShrines.SetValue(false);
 	sgOptions.Gameplay.testBard.SetValue(false);
 	sgOptions.Gameplay.testBarbarian.SetValue(false);
-	sgOptions.Gameplay.theoQuest.SetValue(false);
-	sgOptions.Gameplay.cowQuest.SetValue(false);
+	sgOptions.Gameplay.theoQuest.SetValue(true);
+	sgOptions.Gameplay.cowQuest.SetValue(true);
 }
 
 void LoadOptions()
@@ -1115,16 +1117,16 @@ GameplayOptions::GameplayOptions()
 std::vector<OptionEntryBase *> GameplayOptions::GetEntries()
 {
 	return {
-		&tickRate,
-		&friendlyFire,
-		&multiplayerFullQuests,
-		&randomizeQuests,
-		&theoQuest,
-		&cowQuest,
-		&runInTown,
-		&quickCast,
-		&testBard,
-		&testBarbarian,
+		// &tickRate,
+		// &friendlyFire,
+		// &multiplayerFullQuests,
+		// &randomizeQuests,
+		// &theoQuest,
+		// &cowQuest,
+		// &runInTown,
+		// &quickCast,
+		// &testBard,
+		// &testBarbarian,
 		&experienceBar,
 		&showItemGraphicsInStores,
 		&showHealthValues,
@@ -1133,7 +1135,7 @@ std::vector<OptionEntryBase *> GameplayOptions::GetEntries()
 		&showMonsterType,
 		&showItemLabels,
 		&enableFloatingNumbers,
-		&autoRefillBelt,
+		// &autoRefillBelt,
 		&autoEquipWeapons,
 		&autoEquipArmor,
 		&autoEquipHelms,
@@ -1148,9 +1150,9 @@ std::vector<OptionEntryBase *> GameplayOptions::GetEntries()
 		&numFullManaPotionPickup,
 		&numRejuPotionPickup,
 		&numFullRejuPotionPickup,
-		&autoPickupInTown,
-		&disableCripplingShrines,
-		&adriaRefillsMana,
+		// &autoPickupInTown,
+		// &disableCripplingShrines,
+		// &adriaRefillsMana,
 		&grabInput,
 	};
 }
