@@ -58,7 +58,7 @@ int8_t dItem[MAXDUNX][MAXDUNY];
 bool ShowUniqueItemInfoBox;
 CornerStoneStruct CornerStone;
 bool UniqueItemFlags[128];
-// int MaxGold = GOLD_MAX_LIMIT;
+int MaxGold = GOLD_MAX_LIMIT;
 
 /** Maps from item_cursor_graphic to in-memory item type. */
 int8_t ItemCAnimTbl[] = {
