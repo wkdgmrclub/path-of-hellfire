@@ -2891,7 +2891,7 @@ void CalcPlrItemVals(Player &player, bool loadgfx)
 		player._pgfxnum = gfxNum;
 	}
 
-	if (&player == MyPlayer) {
+/* 	if (&player == MyPlayer) {
 		if (player.InvBody[INVLOC_AMULET].isEmpty() || player.InvBody[INVLOC_AMULET].IDidx != IDI_AURIC) {
 			int half = MaxGold;
 			MaxGold = GOLD_MAX_LIMIT;
@@ -2899,9 +2899,9 @@ void CalcPlrItemVals(Player &player, bool loadgfx)
 			if (half != MaxGold)
 				StripTopGold(player);
 		} else {
-			MaxGold = GOLD_MAX_LIMIT * 2;
+		MaxGold = GOLD_MAX_LIMIT * 2;
 		}
-	}
+	} */
 
 	RedrawComponent(PanelDrawComponent::Mana);
 	RedrawComponent(PanelDrawComponent::Health);

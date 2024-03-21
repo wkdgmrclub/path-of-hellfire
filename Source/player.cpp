@@ -1472,9 +1472,9 @@ void ValidatePlayer()
 	for (int i = 0; i < myPlayer._pNumInv; i++) {
 		if (myPlayer.InvList[i]._itype == ItemType::Gold) {
 			int maxGold = GOLD_MAX_LIMIT;
-			if (gbIsHellfire) {
+/* 			if (gbIsHellfire) {
 				maxGold *= 2;
-			}
+			} */
 			if (myPlayer.InvList[i]._ivalue > maxGold) {
 				myPlayer.InvList[i]._ivalue = maxGold;
 			}
