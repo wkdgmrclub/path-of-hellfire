@@ -21,8 +21,8 @@ namespace devilution {
 #define MAXITEMS 127
 #define ITEMTYPES 43
 
-#define GOLD_SMALL_LIMIT 3500
-#define GOLD_MEDIUM_LIMIT 12500
+#define GOLD_SMALL_LIMIT 5000
+#define GOLD_MEDIUM_LIMIT 15000
 #define GOLD_MAX_LIMIT 25000
 
 // Item indestructible durability
