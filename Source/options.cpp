@@ -726,9 +726,12 @@ void OptionEntryResolution::CheckResolutionsAreInitialized() const
 			if (modes[i]->w < modes[i]->h) {
 				std::swap(modes[i]->w, modes[i]->h);
 			}
-			sizes.emplace_back(Size {
-			    static_cast<int>(modes[i]->w * scaleFactor),
-			    static_cast<int>(modes[i]->h * scaleFactor) });
+			if (static_cast<int>(modes[i]->h * scaleFactor) <= 600) {
+			    sizes.emplace_back(Size {
+			        static_cast<int>(modes[i]->w * scaleFactor),
+			        static_cast<int>(modes[i]->h * scaleFactor)
+			    });
+			}
 		}
 	}
 #else
@@ -741,9 +744,12 @@ void OptionEntryResolution::CheckResolutionsAreInitialized() const
 		if (mode.w < mode.h) {
 			std::swap(mode.w, mode.h);
 		}
-		sizes.emplace_back(Size {
-		    static_cast<int>(mode.w * scaleFactor),
-		    static_cast<int>(mode.h * scaleFactor) });
+		if (static_cast<int>(mode.h * scaleFactor) <= 600) {
+		    sizes.emplace_back(Size {
+		        static_cast<int>(mode.w * scaleFactor),
+		        static_cast<int>(mode.h * scaleFactor)
+		    });
+		}
 	}
 	supportsAnyResolution = *sgOptions.Graphics.upscale;
 #endif
@@ -752,19 +758,25 @@ void OptionEntryResolution::CheckResolutionsAreInitialized() const
 		// Attempt to provide sensible options for 4:3 and the native aspect ratio
 		const int width = sizes[0].width;
 		const int height = sizes[0].height;
-		const int commonHeights[] = { 480, 540, 720, 960, 1080, 1440, 2160 };
+		const int commonHeights[] = { 480, 540, 600, 960, 1080, 1440, 2160 };
 		for (int commonHeight : commonHeights) {
 			if (commonHeight > height)
 				break;
-			sizes.emplace_back(Size { commonHeight * 4 / 3, commonHeight });
-			if (commonHeight * width % height == 0)
-				sizes.emplace_back(Size { commonHeight * width / height, commonHeight });
+			if (commonHeight <= 600) {
+			    sizes.emplace_back(Size { commonHeight * 4 / 3, commonHeight });
+			    if (commonHeight * width % height == 0)
+			        sizes.emplace_back(Size { commonHeight * width / height, commonHeight });
+			}
 		}
 	}
 	// Ensures that the ini specified resolution is present in resolution list even if it doesn't match a monitor resolution (for example if played in window mode)
-	sizes.push_back(this->size);
+	if (this->size.height <= 600) {
+	    sizes.push_back(this->size);
+	}
 	// Ensures that the platform's preferred default resolution is always present
-	sizes.emplace_back(Size { DEFAULT_WIDTH, DEFAULT_HEIGHT });
+	if (DEFAULT_HEIGHT <= 600) {
+	    sizes.emplace_back(Size { DEFAULT_WIDTH, DEFAULT_HEIGHT });
+	}
 	// Ensures that the vanilla Diablo resolution is present on systems that would support it
 	if (supportsAnyResolution)
 		sizes.emplace_back(Size { 640, 480 });
