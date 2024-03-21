@@ -358,7 +358,7 @@ bool HardwareCursorSupported()
 #endif
 void ForceHellfire()
 {
-	sgOptions.StartUp.gameMode.SetValue(1);
+	sgOptions.StartUp.gameMode.SetValue(StartUpGameMode::Hellfire);
 	sgOptions.Gameplay.tickRate.SetValue(20);
 	sgOptions.Gameplay.friendlyFire.SetValue(false);
 	sgOptions.Gameplay.autoRefillBelt.SetValue(false);
