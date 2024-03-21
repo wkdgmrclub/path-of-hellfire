@@ -58,7 +58,7 @@ int8_t dItem[MAXDUNX][MAXDUNY];
 bool ShowUniqueItemInfoBox;
 CornerStoneStruct CornerStone;
 bool UniqueItemFlags[128];
-int MaxGold = GOLD_MAX_LIMIT;
+// int MaxGold = GOLD_MAX_LIMIT;
 
 /** Maps from item_cursor_graphic to in-memory item type. */
 int8_t ItemCAnimTbl[] = {
@@ -2891,7 +2891,7 @@ void CalcPlrItemVals(Player &player, bool loadgfx)
 		player._pgfxnum = gfxNum;
 	}
 
-	if (&player == MyPlayer) {
+/* 	if (&player == MyPlayer) {
 		if (player.InvBody[INVLOC_AMULET].isEmpty() || player.InvBody[INVLOC_AMULET].IDidx != IDI_AURIC) {
 			int half = MaxGold;
 			MaxGold = GOLD_MAX_LIMIT;
@@ -2899,9 +2899,9 @@ void CalcPlrItemVals(Player &player, bool loadgfx)
 			if (half != MaxGold)
 				StripTopGold(player);
 		} else {
-			MaxGold = GOLD_MAX_LIMIT * 2;
+		MaxGold = GOLD_MAX_LIMIT * 2;
 		}
-	}
+	} */
 
 	RedrawComponent(PanelDrawComponent::Mana);
 	RedrawComponent(PanelDrawComponent::Health);
