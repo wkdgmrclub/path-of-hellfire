@@ -4279,7 +4279,7 @@ void SpawnWitch(int lvl)
 			continue;
 		}
 
-		if (gbIsHellfire) {
+/* 		if (gbIsHellfire) {
 			if (i < PinnedItemCount + MaxPinnedBookCount && bookCount < pinnedBookCount) {
 				_item_indexes bookType = PinnedBookTypes[i - PinnedItemCount];
 				if (lvl >= AllItemsList[bookType].iMinMLvl) {
@@ -4293,7 +4293,7 @@ void SpawnWitch(int lvl)
 					continue;
 				}
 			}
-		}
+		} */
 
 		if (i >= itemCount) {
 			item.clear();
@@ -4440,7 +4440,7 @@ void SpawnHealer(int lvl)
 {
 	constexpr size_t PinnedItemCount = 2;
 	constexpr std::array<_item_indexes, PinnedItemCount + 2> PinnedItemTypes = { IDI_HEAL, IDI_FULLHEAL, IDI_ELIXVIT, IDI_RESURRECT };
-	const auto itemCount = static_cast<size_t>(20);
+	const auto itemCount = static_cast<size_t>(12);
 
 	for (size_t i = 0; i < sizeof(healitem) / sizeof(healitem[0]); ++i) {
 		Item &item = healitem[i];
