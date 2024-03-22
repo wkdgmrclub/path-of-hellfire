@@ -571,6 +571,9 @@ bool PlrHitMonst(Player &player, Monster &monster, bool adjacentDamage = false)
 {
 	int hper = 0;
 
+	if (monster.isInvulnerable)
+		return false;
+
 	if (!monster.isPossibleToHit())
 		return false;
 

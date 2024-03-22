@@ -258,6 +258,7 @@ struct Monster { // note: missing field _mAFNum
 	/** The current target of the monster. An index in to either the player or monster array based on the _meflag value. */
 	uint8_t enemy;
 	bool isInvalid;
+	bool isInvulnerable;
 	MonsterAIID ai;
 	/**
 	 * @brief Specifies monster's behaviour across various actions.
