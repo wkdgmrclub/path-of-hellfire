@@ -3614,8 +3614,10 @@ void WeakenNaKrul()
 	if (sgGameInitInfo.nDifficulty == DIFF_NORMAL) {
 		monster.armorClass -= 50;
 		monster.resistance = RESIST_MAGIC | RESIST_FIRE | RESIST_LIGHTNING;
-	} else if (sgGameInitInfo.nDifficulty == DIFF_NIGHTMARE 
-	|| sgGameInitInfo.nDifficulty == DIFF_HELL) {
+	} else if (sgGameInitInfo.nDifficulty == DIFF_NIGHTMARE) {
+		monster.resistance = RESIST_MAGIC | RESIST_FIRE | RESIST_LIGHTNING;
+		monster.isInvulnerable = false;
+	} else if (sgGameInitInfo.nDifficulty == DIFF_HELL) {
 		monster.isInvulnerable = false;
 	}
 }
@@ -4917,7 +4919,8 @@ bool Monster::isPossibleToHit() const
 	    || talkMsg != TEXT_NONE
 	    || (type().type == MT_ILLWEAV && goal == MonsterGoal::Retreat)
 	    || mode == MonsterMode::Charge
-	    || (IsAnyOf(type().type, MT_COUNSLR, MT_MAGISTR, MT_CABALIST, MT_ADVOCATE) && goal != MonsterGoal::Normal));
+	    || (IsAnyOf(type().type, MT_COUNSLR, MT_MAGISTR, MT_CABALIST, MT_ADVOCATE) && goal != MonsterGoal::Normal)
+		|| (IsAnyOf(type().type, MT_NAKRUL) && isInvulnerable == true));
 }
 
 void Monster::tag(const Player &tagger)
