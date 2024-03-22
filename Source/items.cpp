@@ -4264,7 +4264,7 @@ void SpawnWitch(int lvl)
 
 	int bookCount = 0;
 	const int pinnedBookCount = gbIsHellfire ? RandomIntLessThan(MaxPinnedBookCount) : 0;
-	const int itemCount = RandomIntBetween(20);
+	const int itemCount = 20;
 	const int maxValue = 250000;
 
 	for (int i = 0; i < WITCH_ITEMS; i++) {
