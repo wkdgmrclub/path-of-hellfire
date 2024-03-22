@@ -884,7 +884,7 @@ void SpawnLoot(Monster &monster, bool sendmsg)
 		}
 	} else if (monster.type().type == MT_NAKRUL) {
 		SfxID nSFX = IsUberRoomOpened ? SfxID::NaKrul4 : SfxID::NaKrul5;
-		if (sgGameInitInfo.bCowQuest != 0 && sgGameInitInfo.nDifficulty == DIFF_HELL)
+		if (sgGameInitInfo.nDifficulty == DIFF_HELL)
 			nSFX = SfxID::NaKrul6;
 		if (effect_is_playing(nSFX))
 			stream_stop();
@@ -4196,7 +4196,7 @@ void ProcessMonsters()
 				PlaySFX(SfxID::ButcherGreeting);
 			}
 			if (monster.type().type == MT_NAKRUL) {
-				if (sgGameInitInfo.bCowQuest != 0) {
+				if (sgGameInitInfo.nDifficulty == DIFF_HELL) {
 					PlaySFX(SfxID::NaKrul6);
 				} else {
 					if (IsUberRoomOpened)
