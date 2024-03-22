@@ -167,6 +167,7 @@ void InitMonster(Monster &monster, Direction rd, size_t typeIndex, Point positio
 	monster.goalVar3 = 0;
 	monster.pathCount = 0;
 	monster.isInvalid = false;
+	monster.isInvulnerable = false;
 	monster.uniqueType = UniqueMonsterType::None;
 	monster.activeForTicks = 0;
 	monster.lightId = NO_LIGHT;
@@ -538,8 +539,14 @@ void PlaceQuestMonsters()
 					}
 				}
 			}
-			if (UberDiabloMonsterIndex == -1)
+			if (UberDiabloMonsterIndex == -1) {
 				PlaceUniqueMonst(UniqueMonsterType::NaKrul, 0, 0);
+				auto &monster = Monsters[UberDiabloMonsterIndex];
+				if (sgGameInitInfo.nDifficulty == DIFF_NIGHTMARE
+				|| sgGameInitInfo.nDifficulty == DIFF_HELL ) {
+					monster.isInvulnerable = true;
+				}
+			}
 		}
 	} else if (setlvlnum == SL_SKELKING) {
 		PlaceUniqueMonst(UniqueMonsterType::SkeletonKing, 0, 0);
@@ -877,15 +884,88 @@ void SpawnLoot(Monster &monster, bool sendmsg)
 		}
 	} else if (monster.type().type == MT_NAKRUL) {
 		SfxID nSFX = IsUberRoomOpened ? SfxID::NaKrul4 : SfxID::NaKrul5;
-		if (sgGameInitInfo.bCowQuest != 0)
+		if (sgGameInitInfo.nDifficulty == DIFF_HELL)
 			nSFX = SfxID::NaKrul6;
 		if (effect_is_playing(nSFX))
 			stream_stop();
 		UberDiabloMonsterIndex = -2;
-		CreateMagicWeapon(monster.position.tile, ItemType::Sword, ICURS_GREAT_SWORD, sendmsg, false);
-		CreateMagicWeapon(monster.position.tile, ItemType::Staff, ICURS_WAR_STAFF, sendmsg, false);
-		CreateMagicWeapon(monster.position.tile, ItemType::Bow, ICURS_LONG_WAR_BOW, sendmsg, false);
-		CreateSpellBook(monster.position.tile, SpellID::Apocalypse, sendmsg, false);
+		if (sgGameInitInfo.nDifficulty == DIFF_NORMAL) {
+			if (GenerateRnd(4) == 3) {
+				CreateSpellBook(monster.position.tile, SpellID::Teleport, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Sword, ICURS_TWO_HANDED_SWORD, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Axe, ICURS_BATTLE_AXE, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Staff, ICURS_LONG_STAFF, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Bow, ICURS_SHORT_WAR_BOW, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Bow, ICURS_LONG_BATTLE_BOW, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Sword, ICURS_BROAD_SWORD, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Shield, ICURS_TOWER_SHIELD, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Shield, ICURS_KITE_SHIELD, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicArmor(monster.position.tile, ItemType::HeavyArmor, ICURS_FIELD_PLATE, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicArmor(monster.position.tile, ItemType::HeavyArmor, ICURS_BREAST_PLATE, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicArmor(monster.position.tile, ItemType::MediumArmor, ICURS_SCALE_MAIL, sendmsg, false);
+			}
+		}
+		if (sgGameInitInfo.nDifficulty == DIFF_NIGHTMARE
+		|| sgGameInitInfo.nDifficulty == DIFF_HELL) {
+			if (GenerateRnd(4) == 3) {
+				CreateSpellBook(monster.position.tile, SpellID::Apocalypse, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicArmor(monster.position.tile, ItemType::HeavyArmor, ICURS_FULL_PLATE_MAIL, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Sword, ICURS_BASTARD_SWORD, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Sword, ICURS_GREAT_SWORD, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Axe, ICURS_GREAT_AXE, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Staff, ICURS_WAR_STAFF, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Bow, ICURS_LONG_WAR_BOW, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicArmor(monster.position.tile, ItemType::HeavyArmor, ICURS_GOTHIC_PLATE, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicWeapon(monster.position.tile, ItemType::Shield, ICURS_GOTHIC_SHIELD, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicArmor(monster.position.tile, ItemType::HeavyArmor, ICURS_FIELD_PLATE, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicArmor(monster.position.tile, ItemType::MediumArmor, ICURS_SCALE_MAIL, sendmsg, false);
+			}
+			if (GenerateRnd(4) == 3) {
+				CreateMagicArmor(monster.position.tile, ItemType::LightArmor, ICURS_STUDDED_LEATHER_ARMOR, sendmsg, false);
+			}
+		}
 	} else if (!monster.isPlayerMinion()) {
 		SpawnItem(monster, monster.position.tile, sendmsg);
 	}
@@ -3531,11 +3611,15 @@ void WeakenNaKrul()
 
 	auto &monster = Monsters[UberDiabloMonsterIndex];
 	PlayEffect(monster, MonsterSound::Death);
-	monster.armorClass -= 50;
-	int hp = monster.maxHitPoints / 2;
-	monster.resistance = 0;
-	monster.hitPoints = hp;
-	monster.maxHitPoints = hp;
+	if (sgGameInitInfo.nDifficulty == DIFF_NORMAL) {
+		monster.armorClass -= 50;
+		monster.resistance = RESIST_MAGIC | RESIST_FIRE | RESIST_LIGHTNING;
+	} else if (sgGameInitInfo.nDifficulty == DIFF_NIGHTMARE) {
+		monster.resistance = RESIST_MAGIC | RESIST_FIRE | IMMUNE_LIGHTNING;
+		monster.isInvulnerable = false;
+	} else if (sgGameInitInfo.nDifficulty == DIFF_HELL) {
+		monster.isInvulnerable = false;
+	}
 }
 
 void InitGolems()
@@ -4114,7 +4198,7 @@ void ProcessMonsters()
 				PlaySFX(SfxID::ButcherGreeting);
 			}
 			if (monster.type().type == MT_NAKRUL) {
-				if (sgGameInitInfo.bCowQuest != 0) {
+				if (sgGameInitInfo.nDifficulty == DIFF_HELL) {
 					PlaySFX(SfxID::NaKrul6);
 				} else {
 					if (IsUberRoomOpened)
@@ -4835,7 +4919,8 @@ bool Monster::isPossibleToHit() const
 	    || talkMsg != TEXT_NONE
 	    || (type().type == MT_ILLWEAV && goal == MonsterGoal::Retreat)
 	    || mode == MonsterMode::Charge
-	    || (IsAnyOf(type().type, MT_COUNSLR, MT_MAGISTR, MT_CABALIST, MT_ADVOCATE) && goal != MonsterGoal::Normal));
+	    || (IsAnyOf(type().type, MT_COUNSLR, MT_MAGISTR, MT_CABALIST, MT_ADVOCATE) && goal != MonsterGoal::Normal)
+		|| (IsAnyOf(type().type, MT_NAKRUL) && isInvulnerable == true));
 }
 
 void Monster::tag(const Player &tagger)
