@@ -93,7 +93,7 @@ haste	FASTATTACK	4	4	44	Weapon,Staff,Misc	Any	false	true	16000	16000	16
 balance	FASTRECOVER	1	1	1	Armor,Misc	Any	false	true	2000	2000	2
 stability	FASTRECOVER	2	2	10	Armor,Misc	Any	false	true	4000	4000	4
 harmony	FASTRECOVER	3	3	20	Armor,Misc	Any	false	true	8000	8000	8
-blocking	FASTBLOCK	1	1	5	Shield	Any	false	true	4000	4000	4
+blocking	FASTBLOCK	1	1	20	Shield,Staff	Any	false	true	4000	4000	4
 devastation	DEVASTATION	1	1	1	Weapon,Staff,Bow	Any	false	true	1200	1200	3
 decay	DECAY	150	250	1	Weapon,Staff,Bow	Any	false	true	200	200	2
 peril	PERIL	1	1	5	Weapon,Staff,Bow	Any	false	true	500	500	1
