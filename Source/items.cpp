@@ -4438,8 +4438,8 @@ void SpawnBoy(int lvl)
 
 void SpawnHealer(int lvl)
 {
-	constexpr size_t PinnedItemCount = 4;
-	constexpr std::array<_item_indexes, PinnedItemCount> PinnedItemTypes = { IDI_HEAL, IDI_FULLHEAL, IDI_ELIXVIT, IDI_RESURRECT };
+	constexpr size_t PinnedItemCount = 2;
+	constexpr std::array<_item_indexes, PinnedItemCount + 3> PinnedItemTypes = { IDI_HEAL, IDI_FULLHEAL, IDI_ELIXVIT, IDI_RESURRECT };
 	const auto itemCount = static_cast<size_t>(RandomIntBetween(10, gbIsHellfire ? 19 : 17));
 
 	for (size_t i = 0; i < sizeof(healitem) / sizeof(healitem[0]); ++i) {
