@@ -4257,8 +4257,8 @@ void SpawnPremium(const Player &player)
 
 void SpawnWitch(int lvl)
 {
-	constexpr int PinnedItemCount = 3;
-	constexpr std::array<_item_indexes, PinnedItemCount> PinnedItemTypes = { IDI_MANA, IDI_FULLMANA, IDI_PORTAL };
+	constexpr int PinnedItemCount = 6;
+	constexpr std::array<_item_indexes, PinnedItemCount> PinnedItemTypes = { IDI_MANA, IDI_FULLMANA, IDI_PORTAL, IDI_ELIXSTR, IDI_ELIXDEX, IDI_ELIXMAG };
 	constexpr int MaxPinnedBookCount = 4;
 	constexpr std::array<_item_indexes, MaxPinnedBookCount> PinnedBookTypes = { IDI_BOOK1, IDI_BOOK2, IDI_BOOK3, IDI_BOOK4 };
 
@@ -4439,7 +4439,7 @@ void SpawnBoy(int lvl)
 void SpawnHealer(int lvl)
 {
 	constexpr size_t PinnedItemCount = 2;
-	constexpr std::array<_item_indexes, PinnedItemCount + 1> PinnedItemTypes = { IDI_HEAL, IDI_FULLHEAL, IDI_RESURRECT };
+	constexpr std::array<_item_indexes, PinnedItemCount + 3> PinnedItemTypes = { IDI_HEAL, IDI_FULLHEAL, IDI_ELIXVIT, IDI_RESURRECT };
 	const auto itemCount = static_cast<size_t>(RandomIntBetween(10, gbIsHellfire ? 19 : 17));
 
 	for (size_t i = 0; i < sizeof(healitem) / sizeof(healitem[0]); ++i) {
