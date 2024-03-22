@@ -3615,7 +3615,7 @@ void WeakenNaKrul()
 		monster.armorClass -= 50;
 		monster.resistance = RESIST_MAGIC | RESIST_FIRE | RESIST_LIGHTNING;
 	} else if (sgGameInitInfo.nDifficulty == DIFF_NIGHTMARE) {
-		monster.resistance = RESIST_MAGIC | RESIST_FIRE | RESIST_LIGHTNING;
+		monster.resistance = RESIST_MAGIC | RESIST_FIRE | IMMUNE_LIGHTNING;
 		monster.isInvulnerable = false;
 	} else if (sgGameInitInfo.nDifficulty == DIFF_HELL) {
 		monster.isInvulnerable = false;
