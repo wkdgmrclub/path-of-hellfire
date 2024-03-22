@@ -86,10 +86,10 @@ IDI_GREYSUIT	Never	Quest	Unequippable	GREY_SUIT	Misc	NONE	Grey Suit		0	0	0	0	0	0
 	Never	Misc	Unequippable	OIL	Misc	NONE	Oil of Accuracy		1	0	0	0	0	0	0	0	0		OILACC	Null	true	500
 	Never	Misc	Unequippable	OIL	Misc	NONE	Oil of Sharpness		1	0	0	0	0	0	0	0	0		OILSHARP	Null	true	500
 	Never	Misc	Unequippable	OIL	Misc	NONE	Oil		10	0	0	0	0	0	0	0	0		OILOF	Null	true	0
-	Regular	Misc	Unequippable	ELIXIR_OF_STRENGTH	Misc	NONE	Elixir of Strength		60	0	0	0	0	0	0	0	0		ELIXSTR	Null	true	50000
-	Regular	Misc	Unequippable	ELIXIR_OF_MAGIC	Misc	NONE	Elixir of Magic		60	0	0	0	0	0	0	0	0		ELIXMAG	Null	true	50000
-	Regular	Misc	Unequippable	ELIXIR_OF_DEXTERITY	Misc	NONE	Elixir of Dexterity		60	0	0	0	0	0	0	0	0		ELIXDEX	Null	true	50000
-	Regular	Misc	Unequippable	ELIXIR_OF_VITALITY	Misc	NONE	Elixir of Vitality		60	0	0	0	0	0	0	0	0		ELIXVIT	Null	true	50000
+IDI_ELIXSTR	Never	Misc	Unequippable	ELIXIR_OF_STRENGTH	Misc	NONE	Elixir of Strength		40	0	0	0	0	0	0	0	0		ELIXSTR	Null	true	50000
+IDI_ELIXMAG	Never	Misc	Unequippable	ELIXIR_OF_MAGIC	Misc	NONE	Elixir of Magic		40	0	0	0	0	0	0	0	0		ELIXMAG	Null	true	50000
+IDI_ELIXDEX	Never	Misc	Unequippable	ELIXIR_OF_DEXTERITY	Misc	NONE	Elixir of Dexterity		40	0	0	0	0	0	0	0	0		ELIXDEX	Null	true	50000
+IDI_ELIXVIT	Never	Misc	Unequippable	ELIXIR_OF_VITALITY	Misc	NONE	Elixir of Vitality		40	0	0	0	0	0	0	0	0		ELIXVIT	Null	true	50000
 	Regular	Misc	Unequippable	SCROLL_OF	Misc	NONE	Scroll of Healing		1	0	0	0	0	0	0	0	0		SCROLL	Healing	true	50
 	Regular	Misc	Unequippable	SCROLL_OF	Misc	NONE	Scroll of Search		1	0	0	0	0	0	0	0	0		SCROLL	Search	true	50
 	Regular	Misc	Unequippable	SCROLL_OF	Misc	NONE	Scroll of Lightning		4	0	0	0	0	0	0	0	0		SCROLLT	Lightning	true	150
