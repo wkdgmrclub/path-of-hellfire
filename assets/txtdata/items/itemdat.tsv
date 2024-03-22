@@ -82,14 +82,14 @@ IDI_GREYSUIT	Never	Quest	Unequippable	GREY_SUIT	Misc	NONE	Grey Suit		0	0	0	0	0	0
 	Regular	Misc	Unequippable	POTION_OF_FULL_MANA	Misc	NONE	Potion of Full Mana		1	0	0	0	0	0	0	0	0		FULLMANA	Null	true	150
 	Regular	Misc	Unequippable	POTION_OF_REJUVENATION	Misc	NONE	Potion of Rejuvenation		3	0	0	0	0	0	0	0	0		REJUV	Null	true	120
 	Regular	Misc	Unequippable	POTION_OF_FULL_REJUVENATION	Misc	NONE	Potion of Full Rejuvenation		7	0	0	0	0	0	0	0	0		FULLREJUV	Null	true	600
-	Regular	Misc	Unequippable	OIL	Misc	NONE	Blacksmith Oil		1	0	0	0	0	0	0	0	0		OILBSMTH	Null	true	100
-	Regular	Misc	Unequippable	OIL	Misc	NONE	Oil of Accuracy		1	0	0	0	0	0	0	0	0		OILACC	Null	true	500
-	Regular	Misc	Unequippable	OIL	Misc	NONE	Oil of Sharpness		1	0	0	0	0	0	0	0	0		OILSHARP	Null	true	500
-	Regular	Misc	Unequippable	OIL	Misc	NONE	Oil		10	0	0	0	0	0	0	0	0		OILOF	Null	true	0
-	Regular	Misc	Unequippable	ELIXIR_OF_STRENGTH	Misc	NONE	Elixir of Strength		15	0	0	0	0	0	0	0	0		ELIXSTR	Null	true	5000
-	Regular	Misc	Unequippable	ELIXIR_OF_MAGIC	Misc	NONE	Elixir of Magic		15	0	0	0	0	0	0	0	0		ELIXMAG	Null	true	5000
-	Regular	Misc	Unequippable	ELIXIR_OF_DEXTERITY	Misc	NONE	Elixir of Dexterity		15	0	0	0	0	0	0	0	0		ELIXDEX	Null	true	5000
-	Regular	Misc	Unequippable	ELIXIR_OF_VITALITY	Misc	NONE	Elixir of Vitality		20	0	0	0	0	0	0	0	0		ELIXVIT	Null	true	5000
+	Never	Misc	Unequippable	OIL	Misc	NONE	Blacksmith Oil		1	0	0	0	0	0	0	0	0		OILBSMTH	Null	true	100
+	Never	Misc	Unequippable	OIL	Misc	NONE	Oil of Accuracy		1	0	0	0	0	0	0	0	0		OILACC	Null	true	500
+	Never	Misc	Unequippable	OIL	Misc	NONE	Oil of Sharpness		1	0	0	0	0	0	0	0	0		OILSHARP	Null	true	500
+	Never	Misc	Unequippable	OIL	Misc	NONE	Oil		10	0	0	0	0	0	0	0	0		OILOF	Null	true	0
+	Regular	Misc	Unequippable	ELIXIR_OF_STRENGTH	Misc	NONE	Elixir of Strength		60	0	0	0	0	0	0	0	0		ELIXSTR	Null	true	100000
+	Regular	Misc	Unequippable	ELIXIR_OF_MAGIC	Misc	NONE	Elixir of Magic		60	0	0	0	0	0	0	0	0		ELIXMAG	Null	true	100000
+	Regular	Misc	Unequippable	ELIXIR_OF_DEXTERITY	Misc	NONE	Elixir of Dexterity		60	0	0	0	0	0	0	0	0		ELIXDEX	Null	true	100000
+	Regular	Misc	Unequippable	ELIXIR_OF_VITALITY	Misc	NONE	Elixir of Vitality		60	0	0	0	0	0	0	0	0		ELIXVIT	Null	true	100000
 	Regular	Misc	Unequippable	SCROLL_OF	Misc	NONE	Scroll of Healing		1	0	0	0	0	0	0	0	0		SCROLL	Healing	true	50
 	Regular	Misc	Unequippable	SCROLL_OF	Misc	NONE	Scroll of Search		1	0	0	0	0	0	0	0	0		SCROLL	Search	true	50
 	Regular	Misc	Unequippable	SCROLL_OF	Misc	NONE	Scroll of Lightning		4	0	0	0	0	0	0	0	0		SCROLLT	Lightning	true	150
@@ -150,20 +150,20 @@ IDI_SHORT_BATTLE_BOW	Double	Weapon	Two-handed	SHORT_BATTLE_BOW	Bow	NONE	Short Ba
 	Double	Weapon	Two-handed	LONG_BATTLE_BOW	Bow	BATTLEBOW	Long Battle Bow	Bow	11	50	1	10	0	0	30	0	60		NONE	Null	false	1000
 	Double	Weapon	Two-handed	SHORT_WAR_BOW	Bow	NONE	Short War Bow	Bow	15	55	4	8	0	0	35	0	70		NONE	Null	false	1500
 	Double	Weapon	Two-handed	LONG_WAR_BOW	Bow	WARBOW	Long War Bow	Bow	19	60	1	14	0	0	45	0	80		NONE	Null	false	2000
-	Regular	Weapon	Two-handed	SHORT_STAFF	Staff	SHORTSTAFF	Short Staff	Staff	1	25	2	4	0	0	0	0	0		STAFF	Null	false	30
-	Regular	Weapon	Two-handed	LONG_STAFF	Staff	LONGSTAFF	Long Staff	Staff	4	35	4	8	0	0	0	0	0		STAFF	Null	false	100
-	Regular	Weapon	Two-handed	COMPOSITE_STAFF	Staff	COMPSTAFF	Composite Staff	Staff	6	45	5	10	0	0	0	0	0		STAFF	Null	false	500
-	Regular	Weapon	Two-handed	SHORT_STAFF	Staff	QUARSTAFF	Quarter Staff	Staff	9	55	6	12	0	0	20	0	0		STAFF	Null	false	1000
-	Regular	Weapon	Two-handed	WAR_STAFF	Staff	WARSTAFF	War Staff	Staff	12	75	8	16	0	0	30	0	0		STAFF	Null	false	1500
+	Regular	Weapon	Two-handed	SHORT_STAFF	Staff	SHORTSTAFF	Short Staff	Staff	1	25	2	4	3	8	0	0	0		STAFF	Null	false	30
+	Regular	Weapon	Two-handed	LONG_STAFF	Staff	LONGSTAFF	Long Staff	Staff	4	35	4	8	5	10	0	0	0		STAFF	Null	false	100
+	Regular	Weapon	Two-handed	COMPOSITE_STAFF	Staff	COMPSTAFF	Composite Staff	Staff	6	45	5	10	8	15	0	0	0		STAFF	Null	false	500
+	Regular	Weapon	Two-handed	SHORT_STAFF	Staff	QUARSTAFF	Quarter Staff	Staff	9	55	6	12	12	20	20	0	0		STAFF	Null	false	1000
+	Regular	Weapon	Two-handed	WAR_STAFF	Staff	WARSTAFF	War Staff	Staff	12	75	8	16	14	18	30	0	0		STAFF	Null	false	1500
 	Regular	Misc	Ring	RING	Ring	RING	Ring	Ring	5	0	0	0	0	0	0	0	0		RING	Null	false	1000
 	Regular	Misc	Ring	RING	Ring	RING	Ring	Ring	10	0	0	0	0	0	0	0	0		RING	Null	false	1000
 	Regular	Misc	Ring	RING	Ring	RING	Ring	Ring	15	0	0	0	0	0	0	0	0		RING	Null	false	1000
 	Regular	Misc	Amulet	AMULET	Amulet	AMULET	Amulet	Amulet	8	0	0	0	0	0	0	0	0		AMULET	Null	false	1200
 	Regular	Misc	Amulet	AMULET	Amulet	AMULET	Amulet	Amulet	16	0	0	0	0	0	0	0	0		AMULET	Null	false	1200
-	Regular	Misc	Unequippable	RUNE_OF_FIRE	Misc	NONE	Rune of Fire	Rune	1	0	0	0	0	0	0	0	0		RUNEF	Null	true	100
-	Regular	Misc	Unequippable	RUNE_OF_LIGHTNING	Misc	NONE	Rune of Lightning	Rune	3	0	0	0	0	0	0	13	0		RUNEL	Null	true	200
-	Regular	Misc	Unequippable	GREATER_RUNE_OF_FIRE	Misc	NONE	Greater Rune of Fire	Rune	7	0	0	0	0	0	0	42	0		GR_RUNEF	Null	true	400
-	Regular	Misc	Unequippable	GREATER_RUNE_OF_LIGHTNING	Misc	NONE	Greater Rune of Lightning	Rune	7	0	0	0	0	0	0	42	0		GR_RUNEL	Null	true	500
-	Regular	Misc	Unequippable	RUNE_OF_STONE	Misc	NONE	Rune of Stone	Rune	7	0	0	0	0	0	0	25	0		RUNES	Null	true	300
+	Never	Misc	Unequippable	RUNE_OF_FIRE	Misc	NONE	Rune of Fire	Rune	1	0	0	0	0	0	0	0	0		RUNEF	Null	true	100
+	Never	Misc	Unequippable	RUNE_OF_LIGHTNING	Misc	NONE	Rune of Lightning	Rune	3	0	0	0	0	0	0	13	0		RUNEL	Null	true	200
+	Never	Misc	Unequippable	GREATER_RUNE_OF_FIRE	Misc	NONE	Greater Rune of Fire	Rune	7	0	0	0	0	0	0	42	0		GR_RUNEF	Null	true	400
+	Never	Misc	Unequippable	GREATER_RUNE_OF_LIGHTNING	Misc	NONE	Greater Rune of Lightning	Rune	7	0	0	0	0	0	0	42	0		GR_RUNEL	Null	true	500
+	Never	Misc	Unequippable	RUNE_OF_STONE	Misc	NONE	Rune of Stone	Rune	7	0	0	0	0	0	0	25	0		RUNES	Null	true	300
 IDI_SORCERER	Never	Weapon	Two-handed	SHORT_STAFF	Staff	NONE	Short Staff of Charged Bolt		1	25	2	4	0	0	0	20	0		STAFF	ChargedBolt	false	520
 IDI_ARENAPOT	Never	Misc	Unequippable	ARENA_POTION	Misc	NONE	Arena Potion		7	0	0	0	0	0	0	0	0		ARENAPOT	Null	true	0
